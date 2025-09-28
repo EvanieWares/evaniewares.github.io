@@ -40,7 +40,7 @@
         <!-- Theme Toggle & Mobile Menu Button -->
         <div class="flex items-center space-x-4">
           <!-- Theme Toggle -->
-          <Button
+          <!-- <Button
             variant="ghost"
             size="sm"
             @click="toggleTheme"
@@ -50,7 +50,7 @@
               :icon="isDark ? 'lucide:sun' : 'lucide:moon'" 
               class="w-5 h-5 text-gray-700 dark:text-gray-300" 
             />
-          </Button>
+          </Button> -->
 
           <!-- Mobile Menu Button -->
           <Button
@@ -134,11 +134,11 @@ const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
 }
 
-const toggleTheme = () => {
-  isDark.value = !isDark.value
-  document.documentElement.classList.toggle('dark', isDark.value)
-  localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
-}
+// const toggleTheme = () => {
+//   isDark.value = !isDark.value
+//   document.documentElement.classList.toggle('dark', isDark.value)
+//   localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
+// }
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
