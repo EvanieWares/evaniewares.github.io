@@ -5,7 +5,7 @@
         <!-- Brand Section -->
         <div class="space-y-4">
           <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Evanie Wares
+            Chisomo Psyelera
           </div>
           <p class="text-gray-400 leading-relaxed">
             Passionate developer creating innovative digital solutions with modern web technologies.
@@ -119,7 +119,7 @@
       <div class="mt-12 pt-8 border-t border-gray-800">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-gray-400 mb-4 md:mb-0">
-            <p>&copy; {{ currentYear }} Evanie Wares. All rights reserved.</p>
+            <p>&copy; {{ currentYear }} PsyByte Labs. All rights reserved.</p>
           </div>
           <div class="flex space-x-6 text-sm">
             <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
