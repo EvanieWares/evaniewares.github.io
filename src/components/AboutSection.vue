@@ -11,7 +11,7 @@
           <div class="space-y-6">
             <div class="relative">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face" 
+                src="/chiso2.JPG" 
                 alt="About me" 
                 class="rounded-2xl shadow-2xl w-full object-cover transition-transform hover:scale-105"
               />
