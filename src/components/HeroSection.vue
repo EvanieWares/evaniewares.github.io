@@ -21,7 +21,7 @@
         style="animation-delay: 0.2s"
       >
         <Avatar class="w-32 h-32 mx-auto mb-8 ring-4 ring-blue-500/20 transition-transform hover:scale-105">
-          <AvatarImage src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Profile" />
+          <AvatarImage src="/chiso1.JPG?w=150&h=150&fit=crop&crop=face" alt="Profile" />
           <AvatarFallback class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-white">
             EW
           </AvatarFallback>
