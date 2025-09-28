@@ -23,7 +23,7 @@
         <Avatar class="w-32 h-32 mx-auto mb-8 ring-4 ring-blue-500/20 transition-transform hover:scale-105">
           <AvatarImage src="/chiso1.JPG?w=150&h=150&fit=crop&crop=face" alt="Profile" />
           <AvatarFallback class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-            EW
+            PsyByte Labs
           </AvatarFallback>
         </Avatar>
       </div>
@@ -96,8 +96,8 @@ import { Icon } from '@iconify/vue'
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar'
 import { Button } from '@/components/ui/button'
 
-const name = ref('Evanie Wares')
-const titles = ['Full Stack Developer', 'UI/UX Designer', 'Creative Technologist', 'Problem Solver']
+const name = ref('Chisomo Psyelera')
+const titles = ['Full Stack Developer', 'Workflow Automation Engineer', 'UI/UX Designer', 'Creative Technologist', 'Problem Solver']
 const currentTitle = ref('')
 const currentTitleIndex = ref(0)
 const description = ref('Passionate about creating innovative digital solutions that make a difference. I specialize in modern web technologies and user-centered design.')
