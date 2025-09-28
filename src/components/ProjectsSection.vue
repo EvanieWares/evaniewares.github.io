@@ -97,11 +97,11 @@
               <div class="flex items-center gap-4">
                 <span class="flex items-center gap-1">
                   <Icon icon="lucide:star" class="w-4 h-4" />
-                  {{ project.stars }}
+                  <!-- {{ project.stars }} -->
                 </span>
                 <span class="flex items-center gap-1">
                   <Icon icon="lucide:git-fork" class="w-4 h-4" />
-                  {{ project.forks }}
+                  <!-- {{ project.forks }} -->
                 </span>
               </div>
               <span>{{ project.year }}</span>
@@ -154,15 +154,15 @@ const categories = ['All', 'Web App', 'Mobile', 'API', 'Open Source']
 const projects: Project[] = [
   {
     id: 1,
-    title: 'E-Commerce Platform',
-    description: 'A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=240&fit=crop',
+    title: 'Personal Finance Management Tool',
+    description: 'A full-stack application that helps users manage their personal finances by tracking transactions, creating budgets, and generating financial summaries.',
+    image: 'https://github.com/user-attachments/assets/f79a9e92-5474-419f-a58c-2e5d5f2a7f48',
     category: 'Web App',
-    technologies: ['Vue.js', 'Node.js', 'PostgreSQL', 'Stripe'],
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example',
-    stars: 156,
-    forks: 42,
+    technologies: ['Vue.js', 'FastAPI', 'PyMongo', 'Vuetify', 'JWT', 'Axios'],
+    demoUrl: 'https://github.com/Brendah90/personal-finance-management-tool',
+    githubUrl: 'https://github.com/Brendah90/personal-finance-management-tool',
+    stars: 78,
+    forks: 21,
     year: '2024'
   },
   {
