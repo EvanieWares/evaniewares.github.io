@@ -1,5 +1,6 @@
 {
-  "name": "portfolio",
+  "name": "evaniewares.github.io",
+  "description": "Personal portfolio website for Chisomo Psyelera",
   "private": true,
   "version": "0.0.0",
   "type": "module",
