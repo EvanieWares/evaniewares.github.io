@@ -7,7 +7,7 @@ An interactive and animated portfolio/profile website built with modern web tech
 - **Interactive Hero Section** with typewriter animation and floating elements
 - **About Section** with animated skill progress bars and stats
 - **Skills & Technologies** showcase with interactive tech stack
-- **Project Portfolio** with filtering and hover effects  
+- **Project Portfolio** with filtering and hover effects
 - **Testimonials Carousel** with auto-slide functionality
 - **Contact Form** with animation and validation
 - **Dark/Light Theme Toggle** with system preference detection
@@ -20,7 +20,7 @@ An interactive and animated portfolio/profile website built with modern web tech
 
 - **Vue 3** - Progressive JavaScript framework
 - **TypeScript** - Type-safe JavaScript
-- **Vite** - Fast build tool and dev server  
+- **Vite** - Fast build tool and dev server
 - **Tailwind CSS** - Utility-first CSS framework
 - **shadcn-vue** - Beautiful, accessible UI components
 - **@vueuse/core** - Collection of Vue composition utilities
@@ -36,17 +36,20 @@ An interactive and animated portfolio/profile website built with modern web tech
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/EvanieWares/evaniewares.github.io.git
    cd evaniewares.github.io
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
@@ -64,6 +67,7 @@ The built files will be in the `dist` directory.
 ## 📱 Responsive Design
 
 The website is fully responsive and optimized for:
+
 - Mobile devices (320px+)
 - Tablets (768px+)
 - Desktops (1024px+)
@@ -72,10 +76,12 @@ The website is fully responsive and optimized for:
 ## 🎨 Customization
 
 ### Colors & Theming
+
 - Edit CSS custom properties in `src/index.css`
 - Modify Tailwind config in `tailwind.config.js`
 
 ### Content
+
 - **Hero Section**: Update personal info in `HeroSection.vue`
 - **About**: Modify experience and skills in `AboutSection.vue`
 - **Projects**: Add your projects in `ProjectsSection.vue`
@@ -85,31 +91,37 @@ The website is fully responsive and optimized for:
 ## 🌟 Key Components
 
 ### 1. Hero Section
+
 - Animated avatar and typewriter effect
 - Social links and call-to-action buttons
 - Floating background animations
 
-### 2. About Section  
+### 2. About Section
+
 - Personal introduction and experience
 - Animated skill progress bars
 - Achievement statistics
 
 ### 3. Skills Section
+
 - Categorized skill showcase
 - Interactive technology stack
 - Certifications and achievements
 
 ### 4. Projects Section
+
 - Filterable project portfolio
 - Hover effects and project details
 - GitHub and demo links
 
 ### 5. Testimonials
+
 - Carousel with auto-slide
 - Client reviews and ratings
 - Company stats
 
 ### 6. Contact Section
+
 - Interactive contact form
 - Contact information
 - Social media links
@@ -132,8 +144,8 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📞 Contact
 
-- **Email**: contact@evaniewares.com
-- **LinkedIn**: [linkedin.com/in/evanie-wares](https://linkedin.com/in/evanie-wares)
+- **Email**: evaniewares@gmail.com
+- **LinkedIn**: [linkedin.com/in/evanie-wares](https://linkedin.com/in/chisopsyelera)
 - **GitHub**: [github.com/EvanieWares](https://github.com/EvanieWares)
 - **Website**: [evaniewares.github.io](https://evaniewares.github.io)
 
