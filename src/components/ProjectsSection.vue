@@ -40,7 +40,7 @@
             <img
               :src="project.image"
               :alt="project.title"
-              class="w-full h-full object-cover transition-transform group-hover:scale-110"
+              class="w-full h-full object-cover object-top transition-transform group-hover:scale-110"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             
@@ -219,16 +219,16 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: 'Analytics Dashboard',
-    description: 'Real-time analytics dashboard with interactive charts, data visualization, and export capabilities.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=240&fit=crop',
+    title: 'Sivi Meka',
+    description: 'A modern, expressive Vue.js web application for building professional CVs with style. Uses Make.com workflow to create CVs tailored to job descriptions.',
+    image: 'https://github.com/EvanieWares/sivimeka/blob/main/screenshots/desktop-cv-form-step1.png?raw=true',
     category: 'Web App',
-    technologies: ['Vue.js', 'D3.js', 'FastAPI', 'Redis'],
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example',
-    stars: 123,
-    forks: 34,
-    year: '2023'
+    technologies: ['Vue.js', 'Make.com', 'Tailwind CSS', 'JavaScript'],
+    demoUrl: 'https://evaniewares.github.io/sivimeka/',
+    githubUrl: 'https://github.com/EvanieWares/sivimeka',
+    stars: 15,
+    forks: 3,
+    year: '2025'
   }
 ]
 
