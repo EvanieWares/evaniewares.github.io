@@ -187,16 +187,16 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Weather Mobile App',
-    description: 'Cross-platform mobile weather application with location-based forecasts and beautiful animations.',
-    image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=240&fit=crop',
+    title: 'ClassEase',
+    description: 'A comprehensive mobile app that streamlines teachers\' assessment process. Features educational resources, plus a community section for collaboration and mutual assistance.',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=240&fit=crop',
     categories: ['Mobile'],
-    technologies: ['React Native', 'Expo', 'Redux', 'Weather API'],
+    technologies: ['Jetpack Compose', 'Room Database', 'Firebase', 'Firestore', 'Hilt'],
     demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example',
-    stars: 67,
-    forks: 18,
-    year: '2023'
+    stars: 124,
+    forks: 38,
+    year: '2024'
   },
   {
     id: 4,
