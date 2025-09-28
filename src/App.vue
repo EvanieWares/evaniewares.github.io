@@ -5,7 +5,7 @@ import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
-import TestimonialsSection from './components/TestimonialsSection.vue'
+// import TestimonialsSection from './components/TestimonialsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import FooterSection from './components/FooterSection.vue'
 </script>
@@ -23,7 +23,7 @@ import FooterSection from './components/FooterSection.vue'
       <AboutSection />
       <SkillsSection />
       <ProjectsSection />
-      <TestimonialsSection />
+      <!-- <TestimonialsSection /> -->
       <ContactSection />
     </main>
     
