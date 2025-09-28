@@ -163,6 +163,19 @@ const skillCategories = [
     ]
   },
   {
+    name: 'Mobile Development',
+    description: 'Native Android apps with modern UI frameworks',
+    icon: 'lucide:smartphone',
+    skills: [
+      { name: 'Android', icon: 'logos:android-icon', level: 90 },
+      { name: 'Jetpack Compose', icon: 'simple-icons:jetpackcompose', level: 85 },
+      { name: 'Kotlin', icon: 'logos:kotlin-icon', level: 90 },
+      { name: 'Firebase', icon: 'logos:firebase', level: 80 },
+      { name: 'Java', icon: 'logos:java', level: 75 },
+      { name: 'Android Studio', icon: 'simple-icons:androidstudio', level: 85 }
+    ]
+  },
+  {
     name: 'Backend',
     description: 'Creating robust server-side applications and APIs',
     icon: 'lucide:server',
@@ -176,16 +189,29 @@ const skillCategories = [
     ]
   },
   {
-    name: 'Tools & DevOps',
-    description: 'Streamlining development and deployment processes',
+    name: 'Automation & DevOps',
+    description: 'Workflow automation and deployment processes',
+    icon: 'lucide:workflow',
+    skills: [
+      { name: 'GitHub Actions', icon: 'simple-icons:githubactions', level: 90 },
+      { name: 'Docker', icon: 'logos:docker-icon', level: 80 },
+      { name: 'AWS', icon: 'logos:aws', level: 75 },
+      { name: 'Zapier', icon: 'simple-icons:zapier', level: 85 },
+      { name: 'Make', icon: 'simple-icons:make', level: 85 },
+      { name: 'Terraform', icon: 'simple-icons:terraform', level: 65 }
+    ]
+  },
+  {
+    name: 'Tools & Design',
+    description: 'Development tools and design workflow',
     icon: 'lucide:wrench',
     skills: [
       { name: 'Git', icon: 'logos:git-icon', level: 95 },
-      { name: 'Docker', icon: 'logos:docker-icon', level: 80 },
-      { name: 'AWS', icon: 'logos:aws', level: 75 },
       { name: 'Vercel', icon: 'logos:vercel-icon', level: 85 },
       { name: 'Jest', icon: 'logos:jest', level: 80 },
-      { name: 'Figma', icon: 'logos:figma', level: 85 }
+      { name: 'Figma', icon: 'logos:figma', level: 85 },
+      { name: 'VS Code', icon: 'logos:visual-studio-code', level: 95 },
+      { name: 'Postman', icon: 'simple-icons:postman', level: 85 }
     ]
   }
 ]
@@ -194,26 +220,36 @@ const techStack = [
   { name: 'Vue.js', icon: 'logos:vue', description: 'Progressive JavaScript framework for building user interfaces' },
   { name: 'React', icon: 'logos:react', description: 'A JavaScript library for building user interfaces' },
   { name: 'TypeScript', icon: 'logos:typescript-icon', description: 'Typed superset of JavaScript' },
+  { name: 'Android', icon: 'logos:android-icon', description: 'Native Android app development' },
+  { name: 'Jetpack Compose', icon: 'simple-icons:jetpackcompose', description: 'Modern toolkit for building native Android UI' },
+  { name: 'Kotlin', icon: 'logos:kotlin-icon', description: 'Modern programming language for Android development' },
   { name: 'Node.js', icon: 'logos:nodejs-icon', description: 'JavaScript runtime built on Chrome\'s V8 engine' },
   { name: 'Python', icon: 'logos:python', description: 'High-level programming language' },
+  { name: 'Firebase', icon: 'logos:firebase', description: 'Google\'s mobile and web application development platform' },
   { name: 'PostgreSQL', icon: 'logos:postgresql', description: 'Advanced open source relational database' },
   { name: 'MongoDB', icon: 'logos:mongodb-icon', description: 'Document-based NoSQL database' },
   { name: 'Docker', icon: 'logos:docker-icon', description: 'Platform for developing, shipping, and running applications' },
+  { name: 'GitHub Actions', icon: 'simple-icons:githubactions', description: 'Workflow automation and CI/CD platform' },
   { name: 'AWS', icon: 'logos:aws', description: 'Amazon Web Services cloud platform' },
   { name: 'Git', icon: 'logos:git-icon', description: 'Distributed version control system' },
   { name: 'Figma', icon: 'logos:figma', description: 'Collaborative interface design tool' },
-  { name: 'Tailwind', icon: 'logos:tailwindcss-icon', description: 'Utility-first CSS framework' }
+  { name: 'Tailwind', icon: 'logos:tailwindcss-icon', description: 'Utility-first CSS framework' },
+  { name: 'Zapier', icon: 'simple-icons:zapier', description: 'Workflow automation platform' }
 ]
 
 const certifications = [
-  { name: 'AWS Solutions Architect', issuer: 'Amazon Web Services', year: '2024' },
+  { name: 'Fundamentals of Data Science in Precision Medicine and Cloud Computing', issuer: 'Stanford Medicine', year: '2025' },
+  { name: 'Android Developer Certification', issuer: 'Google', year: '2024' },
   { name: 'Vue.js Certified Developer', issuer: 'Vue.js Foundation', year: '2023' },
   { name: 'Full Stack Web Development', issuer: 'freeCodeCamp', year: '2023' },
-  { name: 'Google UX Design Certificate', issuer: 'Google', year: '2022' }
+  { name: 'Google UX Design Certificate', issuer: 'Google', year: '2022' },
+  { name: 'Android Development with Kotlin', issuer: 'Google', year: '2023' }
 ]
 
 const achievements = [
-  { title: 'Open Source Contributor', description: 'Contributed to 15+ open source projects' },
+  { title: 'Full-Stack Developer', description: 'Built end-to-end applications across web and mobile platforms' },
+  { title: 'Mobile App Success', description: 'Published 5+ Android apps with 10k+ downloads' },
+  { title: 'Automation Expert', description: 'Reduced manual tasks by 80% through workflow automation' },
   { title: 'Hackathon Winner', description: 'First place in TechCrunch Disrupt 2024' },
   { title: 'Tech Speaker', description: 'Spoke at 8 conferences and meetups' },
   { title: 'Mentor', description: 'Mentored 20+ junior developers' }
