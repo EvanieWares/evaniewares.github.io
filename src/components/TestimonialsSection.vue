@@ -130,7 +130,7 @@ import { Icon } from '@iconify/vue'
 const currentSlide = ref(0)
 const target = ref()
 const animatedStats = reactive<Record<string, number>>({})
-let autoSlideInterval: NodeJS.Timeout
+let autoSlideInterval: number
 
 const testimonials = [
   {
@@ -228,8 +228,8 @@ const animateNumber = (
 
 useIntersectionObserver(
   target,
-  ([{ isIntersecting }]) => {
-    if (isIntersecting) {
+  ([entry]) => {
+    if (entry?.isIntersecting) {
       // Animate stats
       stats.forEach((stat, index) => {
         setTimeout(() => {
