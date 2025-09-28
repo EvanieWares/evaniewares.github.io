@@ -11,7 +11,7 @@
           <div class="space-y-6">
             <div class="relative">
               <img 
-                src="/chiso2.JPG" 
+                src="/images/chiso2.JPG"
                 alt="About me" 
                 class="rounded-2xl shadow-2xl w-full object-cover transition-transform hover:scale-105"
               />
