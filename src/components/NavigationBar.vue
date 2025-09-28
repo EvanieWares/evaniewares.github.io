@@ -147,12 +147,29 @@ const handleScroll = () => {
   const sections = navItems.map(item => item.section)
   const scrollPosition = window.scrollY + 100
 
-  for (const section of sections.reverse()) {
-    const element = document.getElementById(section === 'hero' ? '' : section)
+  // If we're at the very top, always show hero as active
+  if (window.scrollY < 100) {
+    activeSection.value = 'hero'
+    return
+  }
+
+  // Check each section to find which one is currently in view
+  for (let i = sections.length - 1; i >= 0; i--) {
+    const section = sections[i]
+    if (!section) continue
+    
+    const element = document.getElementById(section)
+    
     if (element) {
-      const offsetTop = section === 'hero' ? 0 : element.offsetTop
+      const offsetTop = element.offsetTop
       if (scrollPosition >= offsetTop) {
         activeSection.value = section
+        break
+      }
+    } else if (section === 'hero') {
+      // For hero section, check if we're near the top
+      if (scrollPosition <= 100) {
+        activeSection.value = 'hero'
         break
       }
     }
