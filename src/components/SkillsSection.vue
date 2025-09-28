@@ -62,7 +62,7 @@
             <div 
               v-for="(tech, index) in techStack" 
               :key="tech.name"
-              class="group relative"
+              class="group relative flex flex-col items-center"
               @mouseover="hoveredTech = tech"
               @mouseleave="hoveredTech = null"
             >
@@ -76,7 +76,7 @@
                 <Icon :icon="tech.icon" class="w-8 h-8 text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors" />
               </div>
               
-              <div class="text-center mt-2">
+              <div class="text-center mt-3">
                 <span class="text-xs font-medium text-gray-700 dark:text-gray-300">{{ tech.name }}</span>
               </div>
 
