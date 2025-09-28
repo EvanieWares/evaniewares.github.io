@@ -202,7 +202,7 @@ const projects: Project[] = [
     id: 4,
     title: 'School Data Sync',
     description: 'An Android app for headteachers to submit monthly school data including staff returns, enrollment, buildings, and furniture inventories. Built with modern Android architecture.',
-    image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=240&fit=crop',
+    image: '/sds.jpg',
     categories: ['Mobile'],
     technologies: ['Jetpack Compose', 'Firebase', 'Hilt', 'Android'],
     demoUrl: 'https://github.com/EvanieWares/sds',
