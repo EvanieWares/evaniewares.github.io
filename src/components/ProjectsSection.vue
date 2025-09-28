@@ -72,9 +72,16 @@
               <h3 class="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {{ project.title }}
               </h3>
-              <Badge :variant="getCategoryVariant(project.category)" class="ml-2">
-                {{ project.category }}
-              </Badge>
+              <div class="flex flex-wrap gap-1 ml-2">
+                <Badge 
+                  v-for="category in project.categories" 
+                  :key="category"
+                  :variant="getCategoryVariant(category)" 
+                  class="text-xs"
+                >
+                  {{ category }}
+                </Badge>
+              </div>
             </div>
             
             <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
@@ -137,7 +144,7 @@ interface Project {
   title: string
   description: string
   image: string
-  category: string
+  categories: string[]
   technologies: string[]
   demoUrl: string
   githubUrl: string
@@ -157,7 +164,7 @@ const projects: Project[] = [
     title: 'Personal Finance Management Tool',
     description: 'A full-stack application that helps users manage their personal finances by tracking transactions, creating budgets, and generating financial summaries.',
     image: 'https://github.com/user-attachments/assets/f79a9e92-5474-419f-a58c-2e5d5f2a7f48',
-    category: 'Web App',
+    categories: ['Web App', 'API'],
     technologies: ['Vue.js', 'FastAPI', 'PyMongo', 'Vuetify', 'JWT', 'Axios'],
     demoUrl: 'https://github.com/Brendah90/personal-finance-management-tool',
     githubUrl: 'https://github.com/Brendah90/personal-finance-management-tool',
@@ -170,7 +177,7 @@ const projects: Project[] = [
     title: 'Task Management App',
     description: 'A collaborative task management application with real-time updates, team collaboration features, and analytics.',
     image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=240&fit=crop',
-    category: 'Web App',
+    categories: ['Web App'],
     technologies: ['React', 'Firebase', 'Material-UI', 'PWA'],
     demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example',
@@ -183,7 +190,7 @@ const projects: Project[] = [
     title: 'Weather Mobile App',
     description: 'Cross-platform mobile weather application with location-based forecasts and beautiful animations.',
     image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=240&fit=crop',
-    category: 'Mobile',
+    categories: ['Mobile'],
     technologies: ['React Native', 'Expo', 'Redux', 'Weather API'],
     demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example',
@@ -196,7 +203,7 @@ const projects: Project[] = [
     title: 'RESTful API Framework',
     description: 'A lightweight, scalable REST API framework with built-in authentication, rate limiting, and documentation.',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=240&fit=crop',
-    category: 'API',
+    categories: ['API'],
     technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
     demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example',
@@ -209,7 +216,7 @@ const projects: Project[] = [
     title: 'Design System Library',
     description: 'A comprehensive design system and component library for consistent UI development across projects.',
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=240&fit=crop',
-    category: 'Open Source',
+    categories: ['Open Source'],
     technologies: ['TypeScript', 'Storybook', 'Tailwind CSS', 'Vite'],
     demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example',
@@ -222,7 +229,7 @@ const projects: Project[] = [
     title: 'Sivi Meka',
     description: 'A modern, expressive Vue.js web application for building professional CVs with style. Uses Make.com workflow to create CVs tailored to job descriptions.',
     image: 'https://github.com/EvanieWares/sivimeka/blob/main/screenshots/desktop-cv-form-step1.png?raw=true',
-    category: 'Web App',
+    categories: ['Web App'],
     technologies: ['Vue.js', 'Make.com', 'Tailwind CSS', 'JavaScript'],
     demoUrl: 'https://evaniewares.github.io/sivimeka/',
     githubUrl: 'https://github.com/EvanieWares/sivimeka',
@@ -235,7 +242,7 @@ const projects: Project[] = [
 const filteredProjects = computed(() => {
   const filtered = selectedCategory.value === 'All' 
     ? projects 
-    : projects.filter(project => project.category === selectedCategory.value)
+    : projects.filter(project => project.categories.includes(selectedCategory.value))
   
   return filtered.slice(0, visibleProjectsCount.value)
 })
@@ -243,7 +250,7 @@ const filteredProjects = computed(() => {
 const hasMoreProjects = computed(() => {
   const totalFiltered = selectedCategory.value === 'All' 
     ? projects.length 
-    : projects.filter(project => project.category === selectedCategory.value).length
+    : projects.filter(project => project.categories.includes(selectedCategory.value)).length
   
   return visibleProjectsCount.value < totalFiltered
 })
