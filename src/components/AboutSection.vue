@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="py-20 bg-white dark:bg-slate-900">
+  <section id="about" class="py-20 bg-white dark:bg-slate-900" ref="target">
     <div class="container mx-auto px-4">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
