@@ -239,10 +239,9 @@ const techStack = [
 
 const certifications = [
   { name: 'Fundamentals of Data Science in Precision Medicine and Cloud Computing', issuer: 'Stanford Medicine', year: '2025' },
-  { name: 'Android Developer Certification', issuer: 'Google', year: '2024' },
+  { name: 'Software Engineering - Backend Specialization', issuer: 'ALX Africa', year: '2024' },
+  { name: 'AiCE Career Essentials', issuer: 'ALX Africa', year: '2024' },
   { name: 'Vue.js Certified Developer', issuer: 'Vue.js Foundation', year: '2023' },
-  { name: 'Full Stack Web Development', issuer: 'freeCodeCamp', year: '2023' },
-  { name: 'Google UX Design Certificate', issuer: 'Google', year: '2022' },
   { name: 'Android Development with Kotlin', issuer: 'Google', year: '2023' }
 ]
 
@@ -250,7 +249,6 @@ const achievements = [
   { title: 'Full-Stack Developer', description: 'Built end-to-end applications across web and mobile platforms' },
   { title: 'Mobile App Success', description: 'Published 5+ Android apps with 10k+ downloads' },
   { title: 'Automation Expert', description: 'Reduced manual tasks by 80% through workflow automation' },
-  { title: 'Hackathon Winner', description: 'First place in TechCrunch Disrupt 2024' },
   { title: 'Tech Speaker', description: 'Spoke at 8 conferences and meetups' },
   { title: 'Mentor', description: 'Mentored 20+ junior developers' }
 ]
