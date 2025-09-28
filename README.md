@@ -1,4 +1,4 @@
-# Evanie Wares Portfolio Website
+# Chisomo Psyelera Portfolio Website
 
 An interactive and animated portfolio/profile website built with modern web technologies, featuring beautiful animations and a responsive design.
 
@@ -145,8 +145,10 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ## 📞 Contact
 
 - **Email**: evaniewares@gmail.com
-- **LinkedIn**: [linkedin.com/in/evanie-wares](https://linkedin.com/in/chisopsyelera)
-- **GitHub**: [github.com/EvanieWares](https://github.com/EvanieWares)
+- **Twitter**: [EvanieWares](https://twitter.com/EvanieWares)
+- **LinkedIn**: [Chisomo Psyelera](https://linkedin.com/in/chisopsyelera)
+- **Instagram**: [PsyByte Labs](https://instagram.com/psybytelabs)
+- **GitHub**: [EvanieWares](https://github.com/EvanieWares)
 - **Website**: [evaniewares.github.io](https://evaniewares.github.io)
 
 ---
