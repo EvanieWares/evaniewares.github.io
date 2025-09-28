@@ -175,14 +175,14 @@ const projects: Project[] = [
   {
     id: 2,
     title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, team collaboration features, and analytics.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=240&fit=crop',
-    categories: ['Web App'],
-    technologies: ['React', 'Firebase', 'Material-UI', 'PWA'],
+    description: 'An AI-powered Zapier automation that triggers every morning to read tasks from ClickUp, Google Calendar, and Microsoft Calendar, then sends clients a well-crafted WhatsApp message with daily tasks and smart priority recommendations.',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=240&fit=crop',
+    categories: ['API'],
+    technologies: ['Zapier', 'ClickUp API', 'Google Calendar API', 'Microsoft Graph API', 'WhatsApp API'],
     demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example',
-    stars: 89,
-    forks: 23,
+    stars: 195,
+    forks: 47,
     year: '2024'
   },
   {
