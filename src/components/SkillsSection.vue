@@ -140,7 +140,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 import { Icon } from '@iconify/vue'
 
@@ -221,8 +221,8 @@ const achievements = [
 
 useIntersectionObserver(
   target,
-  ([{ isIntersecting }]) => {
-    if (isIntersecting) {
+  ([entry]) => {
+    if (entry?.isIntersecting) {
       isVisible.value = true
     }
   },
