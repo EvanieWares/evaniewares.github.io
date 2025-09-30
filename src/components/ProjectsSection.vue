@@ -100,17 +100,7 @@
             </div>
 
             <!-- Project Stats -->
-            <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-              <div class="flex items-center gap-4">
-                <span class="flex items-center gap-1">
-                  <Icon icon="lucide:star" class="w-4 h-4" />
-                  <!-- {{ project.stars }} -->
-                </span>
-                <span class="flex items-center gap-1">
-                  <Icon icon="lucide:git-fork" class="w-4 h-4" />
-                  <!-- {{ project.forks }} -->
-                </span>
-              </div>
+            <div class="flex items-center justify-end text-sm text-gray-500 dark:text-gray-400">
               <span>{{ project.year }}</span>
             </div>
           </div>
@@ -138,106 +128,12 @@ import { ref, computed } from 'vue'
 import { Icon } from '@iconify/vue'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-
-interface Project {
-  id: number
-  title: string
-  description: string
-  image: string
-  categories: string[]
-  technologies: string[]
-  demoUrl: string
-  githubUrl: string
-  stars: number
-  forks: number
-  year: string
-}
+import { projects } from '@/data/portfolio'
 
 const selectedCategory = ref('All')
 const visibleProjectsCount = ref(6)
 
 const categories = ['All', 'Web App', 'Mobile', 'API', 'Open Source']
-
-const projects: Project[] = [
-  {
-    id: 1,
-    title: 'Personal Finance Management Tool',
-    description: 'A full-stack application that helps users manage their personal finances by tracking transactions, creating budgets, and generating financial summaries.',
-    image: 'https://github.com/user-attachments/assets/f79a9e92-5474-419f-a58c-2e5d5f2a7f48',
-    categories: ['Web App', 'API'],
-    technologies: ['Vue.js', 'FastAPI', 'PyMongo', 'Vuetify', 'JWT', 'Axios'],
-    demoUrl: 'https://github.com/Brendah90/personal-finance-management-tool',
-    githubUrl: 'https://github.com/Brendah90/personal-finance-management-tool',
-    stars: 78,
-    forks: 21,
-    year: '2024'
-  },
-  {
-    id: 2,
-    title: 'Task Management App',
-    description: 'An AI-powered Zapier automation that triggers every morning to read tasks from ClickUp, Google Calendar, and Microsoft Calendar, then sends clients a well-crafted WhatsApp message with daily tasks and smart priority recommendations.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=240&fit=crop',
-    categories: ['API'],
-    technologies: ['Zapier', 'ClickUp API', 'Google Calendar API', 'Microsoft Graph API', 'WhatsApp API'],
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example',
-    stars: 195,
-    forks: 47,
-    year: '2024'
-  },
-  {
-    id: 3,
-    title: 'ClassEase',
-    description: 'A comprehensive mobile app that streamlines teachers\' assessment process. Features educational resources, plus a community section for collaboration and mutual assistance.',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=240&fit=crop',
-    categories: ['Mobile'],
-    technologies: ['Jetpack Compose', 'Room Database', 'Firebase', 'Hilt', 'Android'],
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example',
-    stars: 124,
-    forks: 38,
-    year: '2024'
-  },
-  {
-    id: 4,
-    title: 'School Data Sync',
-    description: 'An Android app for headteachers to submit monthly school data including staff returns, enrollment, buildings, and furniture inventories. Built with modern Android architecture.',
-    image: '/images/sds.jpg',
-    categories: ['Mobile'],
-    technologies: ['Jetpack Compose', 'Firebase', 'Hilt', 'Android'],
-    demoUrl: 'https://github.com/EvanieWares/sds',
-    githubUrl: 'https://github.com/EvanieWares/sds',
-    stars: 89,
-    forks: 24,
-    year: '2024'
-  },
-  {
-    id: 5,
-    title: 'School Data Sync Portal',
-    description: 'A web application for district and zone admins to retrieve and analyze school data submitted by headteachers. Features data visualization, Excel export, and comprehensive reporting.',
-    image: '/images/sds-portal.png',
-    categories: ['Web App'],
-    technologies: ['Vue.js', 'Vuetify', 'XLSX', 'Firebase', 'Sass', 'Pinia'],
-    demoUrl: 'https://github.com/EvanieWares/sds-portal',
-    githubUrl: 'https://github.com/EvanieWares/sds-portal',
-    stars: 156,
-    forks: 42,
-    year: '2025'
-  },
-  {
-    id: 6,
-    title: 'Sivi Meka',
-    description: 'A modern, expressive Vue.js web application for building professional CVs with style. Uses Make.com workflow to create CVs tailored to job descriptions.',
-    image: 'https://github.com/EvanieWares/sivimeka/blob/main/screenshots/desktop-cv-form-step1.png?raw=true',
-    categories: ['Web App'],
-    technologies: ['Vue.js', 'Make.com', 'Tailwind CSS', 'JavaScript'],
-    demoUrl: 'https://evaniewares.github.io/sivimeka/',
-    githubUrl: 'https://github.com/EvanieWares/sivimeka',
-    stars: 15,
-    forks: 3,
-    year: '2025'
-  }
-]
 
 const filteredProjects = computed(() => {
   const filtered = selectedCategory.value === 'All' 
