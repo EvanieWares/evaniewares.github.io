@@ -21,7 +21,8 @@
     "shadcn-vue": "^2.2.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.13",
-    "vue": "^3.5.21"
+    "vue": "^3.5.21",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
