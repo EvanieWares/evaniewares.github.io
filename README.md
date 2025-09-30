@@ -5,46 +5,84 @@ An interactive and animated portfolio/profile website built with modern web tech
 ## ✨ Features
 
 - **Interactive Hero Section** with typewriter animation and floating elements
-- **About Section** with animated skill progress bars and stats
-- **Skills & Technologies** showcase with interactive tech stack
-- **Project Portfolio** with filtering and hover effects
-- **Testimonials Carousel** with auto-slide functionality
-- **Contact Form** with animation and validation
-- **Dark/Light Theme Toggle** with system preference detection
-- **Responsive Design** optimized for all devices
+- **About Section** with animated skill progress bars and achievement stats
+- **Skills & Technologies** showcase with categorized tech stack
+- **Project Portfolio** with filtering, hover effects, and clean project cards
+- **Testimonials Carousel** with auto-slide functionality and smooth transitions
+- **Contact Form** with validation and beautiful animations
+- **Responsive Design** optimized for all devices and screen sizes
 - **Smooth Scrolling Navigation** with active section highlighting
-- **Loading Screen** with progress animation
-- **SEO Optimized** with proper meta tags
-- **🔥 Terminal Mode** - Unique portfolio experience in a hacker-style terminal interface
+- **Loading Screen** with progress animation and brand elements
+- **SEO Optimized** with proper meta tags and semantic HTML
+- **🔥 Terminal Mode** - Unique hacker-style terminal interface with 18+ commands
+- **📊 Centralized Data** - Single source of truth for all portfolio information
+- **⚡ Performance Optimized** - Fast loading with code splitting and lazy loading
 
 ### 🖥️ Terminal Commands
 
-The terminal mode offers an immersive, command-line portfolio experience:
+The terminal mode offers an immersive, command-line portfolio experience with proper Unix-like directory structure:
 
 - `help` - Show all available commands
-- `ls` - List projects and files
-- `cat [file]` - Display file contents (try: resume.txt, about.txt, skills.txt)
+- `ls [dir]` - List files and directories (try: `ls`, `ls projects`)
+- `projects` - List all projects with details and technologies
+- `cat [file]` - Display file contents (try: `resume.txt`, `projects/sds-portal`)
 - `pwd` - Show current directory
 - `whoami` - Display user information
+- `contact` - Show contact information and social links
 - `date` - Show current date and time
 - `clear` - Clear terminal screen
-- `tree` - Show project structure
+- `tree` - Show complete project directory structure
 - `ps` - Display running skills/processes
+- `top` - Show system resource usage with skills
+- `neofetch` - Creative system information display
+- `fortune` - Get random programming quotes
 - `sudo hire-me` - Execute hiring protocol with animated contact form
 - `gui` - Return to graphical portfolio interface
 - `exit` - Exit terminal mode
 
-**Pro tip**: Use arrow keys to navigate command history and Tab for auto-completion!
+**Terminal Features**:
+
+- ⌨️ Command history navigation (↑/↓ arrow keys)
+- 🔄 Tab auto-completion for commands
+- 📁 Proper directory structure (`projects/` contains all project files)
+- 🎨 Matrix-style green terminal aesthetic
+
+### 🗃️ Data Architecture
+
+The portfolio uses a **centralized data store** (`/src/data/portfolio.ts`) with TypeScript interfaces for type safety:
+
+- **Skills & Technologies** - Shared between SkillsSection and terminal commands
+- **Contact Information** - Used across ContactSection, FooterSection, and terminal
+- **Social Links** - Consistent across all components and interfaces
+- **Personal Information** - Centralized profile data with company and status
+- **Projects Portfolio** - Clean project data focused on content and technologies
+- **Certifications & Achievements** - Professional accomplishments and credentials
+
+**Benefits**:
+
+- ✅ **Single Source of Truth** - Update once, reflects everywhere
+- ✅ **Type Safety** - TypeScript interfaces prevent data errors
+- ✅ **Consistency** - Same data across GUI and terminal interfaces
+- ✅ **Maintainability** - Easy to add new projects or update information
 
 ## 🛠️ Built With
 
-- **Vue 3** - Progressive JavaScript framework
-- **TypeScript** - Type-safe JavaScript
-- **Vite** - Fast build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework
-- **shadcn-vue** - Beautiful, accessible UI components
-- **@vueuse/core** - Collection of Vue composition utilities
-- **Iconify** - Comprehensive icon framework
+- **Vue 3** - Progressive JavaScript framework with Composition API
+- **TypeScript** - Type-safe JavaScript with interfaces and strict typing
+- **Vite** - Fast build tool and dev server with hot module replacement
+- **Tailwind CSS** - Utility-first CSS framework for rapid development
+- **Vue Router** - Official router for Vue.js for seamless navigation
+- **shadcn-vue** - Beautiful, accessible UI components built on Radix Vue
+- **@vueuse/core** - Collection of Vue composition utilities for enhanced functionality
+- **Iconify** - Comprehensive icon framework with thousands of icons
+
+### 🏗️ Architecture
+
+- **Component-based Architecture** - Modular Vue 3 components
+- **TypeScript Interfaces** - Type-safe data structures
+- **Centralized Data Store** - Single source of truth pattern
+- **Responsive Design System** - Mobile-first approach with Tailwind
+- **Route-based Navigation** - Vue Router for SPA functionality
 
 ## 🚀 Getting Started
 
