@@ -155,6 +155,7 @@
 import { ref, reactive } from 'vue'
 import { Icon } from '@iconify/vue'
 import { Button } from '@/components/ui/button'
+import { contactInfo, socialLinks } from '@/data/portfolio'
 
 const form = reactive({
   name: '',
@@ -165,37 +166,6 @@ const form = reactive({
 
 const isSubmitting = ref(false)
 const showSuccessMessage = ref(false)
-
-const contactInfo = [
-  {
-    type: 'email',
-    label: 'Email',
-    value: 'evaniewares@gmail.com',
-    icon: 'lucide:mail',
-    action: 'mailto:evaniewares@gmail.com'
-  },
-  {
-    type: 'phone',
-    label: 'Phone',
-    value: '+265 994 142 773',
-    icon: 'lucide:phone',
-    action: 'tel:+265994142773'
-  },
-  {
-    type: 'location',
-    label: 'Location',
-    value: 'Liwonde, Machinga, Malawi',
-    icon: 'lucide:map-pin',
-    action: null
-  }
-]
-
-const socialLinks = [
-  { name: 'GitHub', icon: 'lucide:github', url: 'https://github.com/EvanieWares' },
-  { name: 'LinkedIn', icon: 'lucide:linkedin', url: 'https://linkedin.com/in/chisopsyelera' },
-  { name: 'Twitter', icon: 'lucide:twitter', url: 'https://twitter.com/EvanieWares' },
-  { name: 'Instagram', icon: 'lucide:instagram', url: 'https://instagram.com/psybytelabs' }
-]
 
 const handleContactClick = (contact: typeof contactInfo[0]) => {
   if (contact.action) {
