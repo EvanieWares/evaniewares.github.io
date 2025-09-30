@@ -5,7 +5,7 @@
         <!-- Brand Section -->
         <div class="space-y-4">
           <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Chisomo Psyelera
+            {{ personalInfo.name }}
           </div>
           <p class="text-gray-400 leading-relaxed">
             Passionate developer creating innovative digital solutions with modern web technologies.
@@ -57,19 +57,19 @@
           <div class="space-y-3">
             <div class="flex items-center text-gray-400">
               <Icon icon="lucide:mail" class="w-5 h-5 mr-3 text-blue-400" />
-              <a href="mailto:contact@evaniewares.com" class="hover:text-white transition-colors">
-                evaniewares@gmail.com
+              <a :href="contactInfo.find(c => c.type === 'email')?.action || '#'" class="hover:text-white transition-colors">
+                {{ contactInfo.find(c => c.type === 'email')?.value }}
               </a>
             </div>
             <div class="flex items-center text-gray-400">
               <Icon icon="lucide:phone" class="w-5 h-5 mr-3 text-blue-400" />
-              <a href="tel:+15551234567" class="hover:text-white transition-colors">
-                +265 994 142 773
+              <a :href="contactInfo.find(c => c.type === 'phone')?.action || '#'" class="hover:text-white transition-colors">
+                {{ contactInfo.find(c => c.type === 'phone')?.value }}
               </a>
             </div>
             <div class="flex items-center text-gray-400">
               <Icon icon="lucide:map-pin" class="w-5 h-5 mr-3 text-blue-400" />
-              <span>Liwonde, Machinga, Malawi</span>
+              <span>{{ contactInfo.find(c => c.type === 'location')?.value }}</span>
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@
       <div class="mt-12 pt-8 border-t border-gray-800">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-gray-400 mb-4 md:mb-0">
-            <p>&copy; {{ currentYear }} PsyByte Labs. All rights reserved.</p>
+            <p>&copy; {{ currentYear }} {{ personalInfo.company }}. All rights reserved.</p>
           </div>
           <div class="flex space-x-6 text-sm">
             <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
@@ -148,6 +148,7 @@
 import { ref, onMounted, onUnmounted, computed } from 'vue'
 import { Icon } from '@iconify/vue'
 import { Button } from '@/components/ui/button'
+import { socialLinks, contactInfo, personalInfo } from '@/data/portfolio'
 
 const email = ref('')
 const isSubscribing = ref(false)
@@ -155,13 +156,6 @@ const showSubscribeSuccess = ref(false)
 const showBackToTop = ref(false)
 
 const currentYear = computed(() => new Date().getFullYear())
-
-const socialLinks = [
-  { name: 'GitHub', icon: 'lucide:github', url: 'https://github.com/EvanieWares' },
-  { name: 'LinkedIn', icon: 'lucide:linkedin', url: 'https://linkedin.com/in/chisopsyelera' },
-  { name: 'Twitter', icon: 'lucide:twitter', url: 'https://twitter.com/EvanieWares' },
-  { name: 'Instagram', icon: 'lucide:instagram', url: 'https://instagram.com/psybytelabs' }
-]
 
 const quickLinks = [
   { name: 'Home', href: '#hero', section: 'hero' },
