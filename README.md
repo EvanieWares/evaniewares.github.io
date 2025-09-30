@@ -15,6 +15,26 @@ An interactive and animated portfolio/profile website built with modern web tech
 - **Smooth Scrolling Navigation** with active section highlighting
 - **Loading Screen** with progress animation
 - **SEO Optimized** with proper meta tags
+- **🔥 Terminal Mode** - Unique portfolio experience in a hacker-style terminal interface
+
+### 🖥️ Terminal Commands
+
+The terminal mode offers an immersive, command-line portfolio experience:
+
+- `help` - Show all available commands
+- `ls` - List projects and files
+- `cat [file]` - Display file contents (try: resume.txt, about.txt, skills.txt)
+- `pwd` - Show current directory
+- `whoami` - Display user information
+- `date` - Show current date and time
+- `clear` - Clear terminal screen
+- `tree` - Show project structure
+- `ps` - Display running skills/processes
+- `sudo hire-me` - Execute hiring protocol with animated contact form
+- `gui` - Return to graphical portfolio interface
+- `exit` - Exit terminal mode
+
+**Pro tip**: Use arrow keys to navigate command history and Tab for auto-completion!
 
 ## 🛠️ Built With
 
