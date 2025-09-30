@@ -165,9 +165,9 @@ const executeCommand = () => {
       output = `<div class="text-cyan-400">
 Available commands:
 <span class="text-yellow-400">help</span>        - Show this help message
-<span class="text-yellow-400">ls</span>          - List projects and files
+<span class="text-yellow-400">ls [dir]</span>    - List files (try: ls, ls projects)
 <span class="text-yellow-400">projects</span>    - List all projects with details
-<span class="text-yellow-400">cat [file]</span>  - Display file contents (try: resume.txt, about.txt)
+<span class="text-yellow-400">cat [file]</span>  - Display file contents (try: resume.txt, projects/sds-portal)
 <span class="text-yellow-400">pwd</span>         - Show current directory
 <span class="text-yellow-400">whoami</span>      - Display user information
 <span class="text-yellow-400">contact</span>     - Show contact information
@@ -184,14 +184,22 @@ Available commands:
       break
 
     case 'ls':
-      output = `<div class="text-white">
-<span class="text-blue-400">total ${projects.length + 3}</span>
+      if (args[1] === 'projects' || args[1] === 'projects/') {
+        // List contents of projects directory
+        output = `<div class="text-white">
+<span class="text-blue-400">total ${projects.length}</span>
+${projects.map(p => `<span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 1337 ${p.year} <span class="text-white">${p.name}</span>`).join('\n')}
+</div>`
+      } else {
+        // List root directory contents
+        output = `<div class="text-white">
+<span class="text-blue-400">total 4</span>
 <span class="text-green-400">drwxr-xr-x</span> 2 evanie evanie 4096 Dec 15 2024 <span class="text-cyan-400">projects/</span>
 <span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 2048 Dec 15 2024 <span class="text-white">resume.txt</span>
 <span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 1024 Dec 15 2024 <span class="text-white">about.txt</span>
 <span class="text-green-400">-rw-r--r--</span> 1 evanie evanie  512 Dec 15 2024 <span class="text-white">skills.txt</span>
-${projects.map(p => `<span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 1337 ${p.year} <span class="text-white">${p.name}</span>`).join('\n')}
 </div>`
+      }
       break
 
     case 'projects':
@@ -204,9 +212,10 @@ ${projects.map((project, index) => `
    📝 ${project.description.slice(0, 80)}${project.description.length > 80 ? '...' : ''}
    🏷️  Categories: ${project.categories.join(', ')}
    🛠️  Tech: ${project.technologies.slice(0, 3).join(', ')}${project.technologies.length > 3 ? '...' : ''}
-   📂 File: ${project.name}
+   📂 File: projects/${project.name}
 `).join('')}
-<span class="text-purple-400">💡 Use 'cat [filename]' to view detailed project information!</span>
+<span class="text-purple-400">💡 Use 'cat projects/[filename]' to view detailed project information!</span>
+<span class="text-purple-400">💡 Use 'ls projects' to list all project files!</span>
 </div>`
       break
 
@@ -267,7 +276,7 @@ ${socialLinks.map(social => `   • ${social.name}: ${social.url}`).join('\n')}
       output = `<div class="text-cyan-400">
 portfolio/
 ├── projects/
-│   ├── ${projects.map(p => p.name).join('\n│   ├── ')}
+${projects.map((p, index) => `│   ${index === projects.length - 1 ? '└──' : '├──'} ${p.name}`).join('\n')}
 ├── resume.txt
 ├── about.txt
 └── skills.txt
@@ -438,7 +447,13 @@ ${skills.filter(s => ['Git', 'Linux', 'Docker'].includes(s)).map(s => `▓▓▓
 </div>`
 
     default:
-      const project = projects.find(p => p.name.toLowerCase() === filename.toLowerCase())
+      // Check if it's a project file (with or without projects/ prefix)
+      let projectName = filename.toLowerCase()
+      if (projectName.startsWith('projects/')) {
+        projectName = projectName.substring(9) // Remove 'projects/' prefix
+      }
+      
+      const project = projects.find(p => p.name.toLowerCase() === projectName)
       if (project) {
         return `<div class="text-white">
 <span class="text-cyan-400">Project: ${project.title}</span>
