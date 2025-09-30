@@ -152,8 +152,11 @@ const executeCommand = () => {
   const command = currentCommand.value.trim()
   if (!command) return
 
-  // Add to history
-  inputHistory.value.push(command)
+  // Add to history only if it's different from the last command
+  const lastCommand = inputHistory.value[inputHistory.value.length - 1]
+  if (lastCommand !== command) {
+    inputHistory.value.push(command)
+  }
   historyIndex.value = -1
 
   let output = ''
