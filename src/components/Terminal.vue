@@ -113,6 +113,15 @@
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
+import { 
+  skills, 
+  projects, 
+  contactInfo, 
+  socialLinks, 
+  personalInfo,
+  certifications,
+  achievements 
+} from '@/data/portfolio'
 
 const router = useRouter()
 const terminalContainer = ref<HTMLElement>()
@@ -131,21 +140,9 @@ const contactForm = ref({
   message: ''
 })
 
-const projects = [
-  { name: 'project1.txt', description: 'Amazing Vue.js portfolio website with terminal interface' },
-  { name: 'project2.txt', description: 'React-based e-commerce platform with modern UI' },
-  { name: 'project3.txt', description: 'Node.js API server with authentication and database integration' },
-  { name: 'sds-portal.png', description: 'Student Data System - Web application for academic management' }
-]
-
-const skills = [
-  'JavaScript/TypeScript', 'Vue.js', 'React', 'Node.js', 
-  'Python', 'HTML/CSS', 'Tailwind CSS', 'Git', 'Linux', 'Docker'
-]
-
 const availableCommands = [
   'help', 'ls', 'cat', 'pwd', 'whoami', 'date', 'clear', 
-  'tree', 'ps', 'top', 'sudo', 'gui', 'exit', 'neofetch', 'fortune'
+  'tree', 'ps', 'top', 'sudo', 'gui', 'exit', 'neofetch', 'fortune', 'contact', 'projects'
 ]
 
 const executeCommand = () => {
@@ -169,9 +166,11 @@ const executeCommand = () => {
 Available commands:
 <span class="text-yellow-400">help</span>        - Show this help message
 <span class="text-yellow-400">ls</span>          - List projects and files
+<span class="text-yellow-400">projects</span>    - List all projects with details
 <span class="text-yellow-400">cat [file]</span>  - Display file contents (try: resume.txt, about.txt)
 <span class="text-yellow-400">pwd</span>         - Show current directory
 <span class="text-yellow-400">whoami</span>      - Display user information
+<span class="text-yellow-400">contact</span>     - Show contact information
 <span class="text-yellow-400">date</span>        - Show current date and time
 <span class="text-yellow-400">clear</span>       - Clear the terminal
 <span class="text-yellow-400">tree</span>        - Show project structure
@@ -191,7 +190,23 @@ Available commands:
 <span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 2048 Dec 15 2024 <span class="text-white">resume.txt</span>
 <span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 1024 Dec 15 2024 <span class="text-white">about.txt</span>
 <span class="text-green-400">-rw-r--r--</span> 1 evanie evanie  512 Dec 15 2024 <span class="text-white">skills.txt</span>
-${projects.map(p => `<span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 1337 Dec 15 2024 <span class="text-white">${p.name}</span>`).join('\n')}
+${projects.map(p => `<span class="text-green-400">-rw-r--r--</span> 1 evanie evanie 1337 ${p.year} <span class="text-white">${p.name}</span>`).join('\n')}
+</div>`
+      break
+
+    case 'projects':
+      output = `<div class="text-cyan-400">
+<span class="text-green-400">📁 PROJECT PORTFOLIO</span>
+<span class="text-cyan-400">═══════════════════════════════════════</span>
+
+${projects.map((project, index) => `
+<span class="text-yellow-400">${index + 1}. ${project.title}</span> (${project.year})
+   📝 ${project.description.slice(0, 80)}${project.description.length > 80 ? '...' : ''}
+   🏷️  Categories: ${project.categories.join(', ')}
+   🛠️  Tech: ${project.technologies.slice(0, 3).join(', ')}${project.technologies.length > 3 ? '...' : ''}
+   📂 File: ${project.name}
+`).join('')}
+<span class="text-purple-400">💡 Use 'cat [filename]' to view detailed project information!</span>
 </div>`
       break
 
@@ -210,10 +225,32 @@ ${projects.map(p => `<span class="text-green-400">-rw-r--r--</span> 1 evanie eva
 
     case 'whoami':
       output = `<div class="text-cyan-400">
-User: <span class="text-white">evanie</span>
-Role: <span class="text-green-400">Full-Stack Developer</span>
-Status: <span class="text-yellow-400">Available for hire</span>
-Location: <span class="text-purple-400">Ready to work remotely</span>
+User: <span class="text-white">${personalInfo.name.toLowerCase().replace(' ', '')}</span>
+Role: <span class="text-green-400">${personalInfo.title}</span>
+Company: <span class="text-purple-400">${personalInfo.company}</span>
+Status: <span class="text-yellow-400">${personalInfo.status}</span>
+Location: <span class="text-purple-400">${personalInfo.location}</span>
+</div>`
+      break
+
+    case 'contact':
+      output = `<div class="text-cyan-400">
+<span class="text-green-400">📞 CONTACT INFORMATION</span>
+<span class="text-cyan-400">═══════════════════════════════════════</span>
+
+<span class="text-yellow-400">📧 Email:</span>
+   ${contactInfo.find(c => c.type === 'email')?.value}
+   
+<span class="text-yellow-400">📞 Phone:</span>
+   ${contactInfo.find(c => c.type === 'phone')?.value}
+   
+<span class="text-yellow-400">📍 Location:</span>
+   ${contactInfo.find(c => c.type === 'location')?.value}
+
+<span class="text-yellow-400">🌐 Social Links:</span>
+${socialLinks.map(social => `   • ${social.name}: ${social.url}`).join('\n')}
+
+<span class="text-purple-400">💡 Tip: Use 'sudo hire-me' for the interactive contact experience!</span>
 </div>`
       break
 
@@ -328,25 +365,24 @@ const handleCatCommand = (filename: string): string => {
     case 'resume.txt':
       return `<div class="text-white">
 <span class="text-cyan-400">═══════════════════════════════════════</span>
-<span class="text-green-400">           EVANIE'S RESUME              </span>
+<span class="text-green-400">           ${personalInfo.name.toUpperCase()}'S RESUME              </span>
 <span class="text-cyan-400">═══════════════════════════════════════</span>
 
 <span class="text-yellow-400">CONTACT INFO:</span>
-📧 Email: your.email@example.com
-🔗 LinkedIn: linkedin.com/in/yourprofile
-🐙 GitHub: github.com/yourusername
+📧 Email: ${contactInfo.find(c => c.type === 'email')?.value}
+📞 Phone: ${contactInfo.find(c => c.type === 'phone')?.value}
+📍 Location: ${contactInfo.find(c => c.type === 'location')?.value}
+🔗 LinkedIn: ${socialLinks.find(s => s.name === 'LinkedIn')?.url}
+🐙 GitHub: ${socialLinks.find(s => s.name === 'GitHub')?.url}
 
 <span class="text-yellow-400">SKILLS:</span>
 ${skills.map(skill => `• ${skill}`).join('\n')}
 
-<span class="text-yellow-400">EXPERIENCE:</span>
-• Senior Full-Stack Developer (2022-Present)
-• Frontend Developer (2020-2022)
-• Junior Developer (2018-2020)
+<span class="text-yellow-400">RECENT CERTIFICATIONS:</span>
+${certifications.slice(0, 3).map(cert => `• ${cert.name} (${cert.issuer}, ${cert.year})`).join('\n')}
 
-<span class="text-yellow-400">EDUCATION:</span>
-• Bachelor's in Computer Science
-• Various certifications in web development
+<span class="text-yellow-400">KEY ACHIEVEMENTS:</span>
+${achievements.slice(0, 3).map(ach => `• ${ach.title}: ${ach.description}`).join('\n')}
 
 <span class="text-red-400">📄 Full PDF version available upon request!</span>
 </div>`
@@ -354,16 +390,21 @@ ${skills.map(skill => `• ${skill}`).join('\n')}
     case 'about.txt':
       return `<div class="text-white">
 <span class="text-cyan-400">═══════════════════════════════════════</span>
-<span class="text-green-400">            ABOUT EVANIE               </span>
+<span class="text-green-400">            ABOUT ${personalInfo.name.split(' ')[0]?.toUpperCase() || 'EVANIE'}               </span>
 <span class="text-cyan-400">═══════════════════════════════════════</span>
 
-Hello! I'm a passionate full-stack developer who loves creating
-innovative web applications and solving complex problems.
+Hello! I'm ${personalInfo.name}, a passionate ${personalInfo.title.toLowerCase()} at ${personalInfo.company}.
+I love creating innovative web applications and solving complex problems.
+
+<span class="text-yellow-400">Current Status:</span> ${personalInfo.status}
+<span class="text-yellow-400">Location:</span> ${personalInfo.location}
 
 <span class="text-yellow-400">What I do:</span>
 • Build responsive, user-friendly web applications
 • Create scalable backend systems and APIs
+• Develop native Android applications with Kotlin
 • Design intuitive user interfaces
+• Implement workflow automation solutions
 • Collaborate with teams to deliver amazing products
 
 <span class="text-yellow-400">My passion:</span>
@@ -371,9 +412,13 @@ innovative web applications and solving complex problems.
 • Continuous learning and growth
 • Open source contributions
 • Helping others learn to code
+• Building tools that make life easier
 
 <span class="text-green-400">Fun fact:</span> I created this terminal interface because
 I believe portfolios should be as unique as the developer! 🚀
+
+<span class="text-purple-400">Connect with me:</span>
+${socialLinks.map(social => `• ${social.name}: ${social.url}`).join('\n')}
 </div>`
 
     case 'skills.txt':
@@ -396,12 +441,14 @@ ${skills.filter(s => ['Git', 'Linux', 'Docker'].includes(s)).map(s => `▓▓▓
       const project = projects.find(p => p.name.toLowerCase() === filename.toLowerCase())
       if (project) {
         return `<div class="text-white">
-<span class="text-cyan-400">Project: ${project.name}</span>
+<span class="text-cyan-400">Project: ${project.title}</span>
 <span class="text-green-400">Description:</span> ${project.description}
 
-<span class="text-yellow-400">Status:</span> ✅ Completed
-<span class="text-yellow-400">Technologies:</span> Vue.js, TypeScript, Tailwind CSS
-<span class="text-yellow-400">Repository:</span> Available on GitHub
+<span class="text-yellow-400">Categories:</span> ${project.categories.join(', ')}
+<span class="text-yellow-400">Technologies:</span> ${project.technologies.join(', ')}
+<span class="text-yellow-400">Year:</span> ${project.year}
+<span class="text-yellow-400">GitHub:</span> ${project.githubUrl}
+<span class="text-yellow-400">Demo:</span> ${project.demoUrl}
 
 <span class="text-purple-400">Want to see more? Contact me!</span>
 </div>`
