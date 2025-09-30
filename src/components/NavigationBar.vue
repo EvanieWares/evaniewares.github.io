@@ -35,6 +35,17 @@
               :class="{ 'w-full': activeSection === item.section }"
             ></span>
           </a>
+          
+          <!-- Terminal Button -->
+          <Button
+            variant="outline"
+            size="sm"
+            @click="goToTerminal"
+            class="border-green-500 text-green-600 dark:text-green-400 hover:bg-green-500 hover:text-white dark:hover:bg-green-500 dark:hover:text-black transition-colors font-mono text-xs animate-pulse"
+          >
+            <Icon icon="lucide:terminal" class="w-4 h-4 mr-1" />
+            TERMINAL
+          </Button>
         </div>
 
         <!-- Theme Toggle & Mobile Menu Button -->
@@ -86,6 +97,15 @@
           >
             {{ item.name }}
           </a>
+          
+          <!-- Mobile Terminal Button -->
+          <button
+            @click="goToTerminal"
+            class="w-full text-left px-4 py-3 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/20 rounded-lg transition-colors font-mono text-sm flex items-center"
+          >
+            <Icon icon="lucide:terminal" class="w-4 h-4 mr-2" />
+            TERMINAL MODE
+          </button>
         </div>
       </div>
     </div>
@@ -94,9 +114,11 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { Icon } from '@iconify/vue'
 import { Button } from '@/components/ui/button'
 
+const router = useRouter()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const activeSection = ref('hero')
@@ -132,6 +154,10 @@ const handleMobileNavClick = (sectionId: string) => {
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+const goToTerminal = () => {
+  router.push('/terminal')
 }
 
 // const toggleTheme = () => {
